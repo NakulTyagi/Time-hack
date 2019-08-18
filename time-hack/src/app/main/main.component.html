@@ -1,0 +1,43 @@
+<div id="head">
+    <h1>Time Hack </h1>
+    <!-- <h2>Day : {{cday}}</h2> -->
+    <h2>Time : {{ctime}}</h2>
+    </div>
+    
+    <div id="main">
+            <div class="input-group mb-3" id="day">
+                    <div class="input-group-prepend" > 
+                      <label class="input-group-text" for="inputGroupSelect01">Day</label>
+                    </div>
+                    <select class="browser-default custom-select" (change)="selectChangeday($event)"  id="inputGroupSelect01">
+                      <option selected>Choose...</option>
+                      <option value="monday">monday</option>
+                      <option value="tuesday">tuesday</option>
+                      <option value="wednesday">wednesday</option>
+                      <option value="thursday">thursday</option>
+    
+                      <option value="friday">friday</option>                </select>
+                  </div>
+    
+                  <div class="input-group mb-3" id="time">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Time</label>
+                        </div>
+                        <select class="browser-default custom-select" (change)="selectChangetime($event)" id="inp2">
+                          <option selected>Choose...</option>
+                          <option value="11:10">11:10</option>
+                          <option value="12:50">12:50</option>
+                          <option value="1:40">1:40</option>
+                          <option value="2:30">2:30</option>
+                          <option value="3:20">3:20</option>
+                          <option value="4:10">4:10</option>
+                          <option value="5:00">5:00</option>
+                          <option value="5:50">5:50</option>
+                        </select>
+                      </div>
+    
+                      <button id="btn" type="button" class="btn aqua-gradient" (click)="classes()"> Find</button>
+    
+    
+                      <div id="result"><h1 id="res"></h1></div>
+    </div>
