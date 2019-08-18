@@ -67,12 +67,25 @@ export class MainComponent implements OnInit {
 //   // The object was not retrieved successfully.
 // });     
 
+
+
   this.classes();
   }
 
+ today = new Date();
+ hours= this.today.getHours();
+ctime = this.today.getHours() + ":" + this.today.getMinutes() + ":" + this.today.getSeconds();
+  cday= this.today.getDay();
+  str="";
+  // cday=1;
+  // ctime="12:50";
 classes(){
- 
-    if(this.selectedDay=="monday"){
+    if (this.hours>12){
+      this.hours-12;
+     this.ctime=this.hours + ":" + this.today.getMinutes()
+     this.str=(String)(this.ctime);
+    }
+    if(this.selectedDay=="monday"|| this.cday==1){
         for(var i in this.monday){
           
             if(this.selectedTime==i){
@@ -80,10 +93,14 @@ classes(){
                 var res = this.monday[i];
                 document.getElementById("res").innerHTML=res;
             }
+            if(this.str==i){
+              var res = this.monday[i];
+                document.getElementById("res").innerHTML=res;
+            }
           }
         }
 
-        if(this.selectedDay=="tuesday"){
+        if(this.selectedDay=="tuesday" ||this.cday==2){
           for(var i in this.tuesday){
             
               if(this.selectedTime==i){
@@ -91,10 +108,14 @@ classes(){
                   var res = this.tuesday[i];
                   document.getElementById("res").innerHTML=res;
               }
+              if(this.str==i){
+                var res = this.tuesday[i];
+                  document.getElementById("res").innerHTML=res;
+              }
             }
           }
       
-          if(this.selectedDay=="wednesday"){
+          if(this.selectedDay=="wednesday" || this.cday==3){
             for(var i in this.wednesday){
               
                 if(this.selectedTime==i){
@@ -102,10 +123,14 @@ classes(){
                     var res = this.wednesday[i];
                     document.getElementById("res").innerHTML=res;
                 }
+                if(this.str==i){
+                  var res = this.wednesday[i];
+                    document.getElementById("res").innerHTML=res;
+                }
               }
             }
       
-            if(this.selectedDay=="thursday"){
+            if(this.selectedDay=="thursday"  || this.cday==4){
               for(var i in this.thursday){
                 
                   if(this.selectedTime==i){
@@ -113,15 +138,23 @@ classes(){
                       var res = this.thursday[i];
                       document.getElementById("res").innerHTML=res;
                   }
+                  if(this.str==i){
+                    var res = this.thursday[i];
+                      document.getElementById("res").innerHTML=res;
+                  }
                 }
               }
       
-              if(this.selectedDay=="friday"){
+              if(this.selectedDay=="friday"  || this.cday==5){
                 for(var i in this.friday){
                   
                     if(this.selectedTime==i){
                       console.log(this.selectedTime);
                         var res = this.friday[i];
+                        document.getElementById("res").innerHTML=res;
+                    }
+                    if(this.str==i){
+                      var res = this.friday[i];
                         document.getElementById("res").innerHTML=res;
                     }
                   }
